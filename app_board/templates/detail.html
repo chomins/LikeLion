@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Detail</title>
+</head>
+<body>
+    <h1>Home Page</h1>
+    <h1>{{post_detail.name}}</h1>
+    <h2>{{post_detail.writer}}</h2>
+    <p>{{post_detail.date}}</p>
+    <p>{{post_detail.body}}</p>
+
+    <a href="{% url 'home' %}">home</a>
+    <a href="{% url 'edit' post_detail.id %}">수정하기</a>
+    <a href="{% url 'delete' post_detail.id %}">삭제하기</a>
+</body>
+</html>
+{% endblock %}

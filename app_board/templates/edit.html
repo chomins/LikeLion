@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>글을 수정해주세요</h1>
+
+<form action="{%url 'update' post.id %}" method="POST">
+    {% csrf_token %}
+    제목 : <input type="text" name="name" value="{{post.name}}">
+    <br>
+    작가 : <input type="text" name="writer" value="{{post.writer}}">
+    <br>
+    <br>
+    본문 : <textarea name="body" id="" cols="30" rows="10" placeholder="write anything">
+    {{post.body}}
+    </textarea>
+    <br>
+    <br>
+    날짜 변경하기 : <input type="date" name="date" value="{{post.date}}">
+    <br>
+    <br>
+    <button type="submit">작성하기</button>
+</form>
+{% endblock %}

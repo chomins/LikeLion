@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>새 글을 작성해주세요</h1>
+
+<form action="{%url 'create' %}" method="POST">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col"><input type="text" class="form-control" name=name placeholder="제목"></div>
+        <div class="w-100"></div>
+        <div class="col"><input type="text" class="form-control" name="writer" placeholder="작성자"></div>
+        <div class="w-100"></div>
+        <div class="col"><textarea class="form-control" name="body" id="" cols="30" rows="10" placeholder="write anything">
+        </textarea></div>
+    </div>
+
+    <button class="btn btn-primary col align-self-end" type="submit">작성하기</button>
+</form>
+{% endblock %}
